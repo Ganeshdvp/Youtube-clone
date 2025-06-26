@@ -67,3 +67,19 @@
         width: 270px;
     }
 }
+
+@media screen and (min-width:900px) and (max-width : 1024px) {
+    .feed{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: start;
+        gap: 20px;
+    }
+    .card h2{
+        width: 220px;
+    }
+    .card img{
+        width: 220px;
+    }
+}
