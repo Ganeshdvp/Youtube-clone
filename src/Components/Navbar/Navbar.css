@@ -2,23 +2,40 @@ nav{
     padding: 10px 2%;
     justify-content: space-between;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    background: #fff;
     position: sticky;
     top: 0;
     z-index: 10;
+    background-color: black;
+}
+.nav-left{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .nav-left .menu-icon{
-    width: 22px;
-    margin-right: 25px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    padding: 5px 8px;
+    border-radius: 50%;
+    color: white;
+}
+.nav-left .menu-icon:hover{
+    background-color: #ff000072;
+    transform: scale(1.1);
 }
 .nav-left .logo{
-    width: 100px;
+    width: 50px;
+    margin-left: 10px;
+}
+.nav-left span{
+    color: rgb(253, 0, 0);
+    font-family: 'Montserrat', sans-serif;
 }
 .nav-left h2{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .nav-middle .search-box{
-    border: 1px solid #ccc;
+    border: 1px solid #630303;
     margin-right: 15px;
     padding: 8px 12px;
     border-radius: 25px;
@@ -28,34 +45,104 @@ nav{
     border: 0;
     outline: 0;
     background: transparent;
+    color: white;
 }
-.nav-middle .search-box img{
-    width: 20px;
+.nav-middle .search-box .search-icon{
+    border-radius: 50%;
+    font-size: 0.8rem;
+    padding: 5px;
+    cursor: pointer;
+    color: white;
 }
-.nav-right img{
+.nav-middle .search-box .search-icon:hover{
+    background-color: #ff00006c;
+    transform: scale(1.1);
+}
+.nav-right .icons{
     width: 23px;
-    margin-right: 25px;
+    margin-right: 15px;
+    padding: 7px 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    color: white;
+}
+.nav-right .icons:hover{
+     background-color: #ff00005b;
 }
 .nav-right .user-icon{
     width: 33px;
     border-radius: 50%;
 }
 
-@media (max-width:900px){
-    .menu-icon{
+.suggestion-item:hover{
+    background-color: #4c0202;
+}
+
+
+
+/* responsive design */
+@media screen and (max-width:568px) {
+    .nav-left .menu-icon{
         display: none;
     }
-    .nav-right img{
+    .nav-left span{
+        margin-left: -3px;
+    }
+    .nav-right .icons{
         display: none;
     }
-    .nav-right .user-icon{
-        display: block;
-        width: 30px;
-    }
-    .logo{
-        width: 90px;
+    .nav-middle .search-box{
+        margin-left: 20px;
+        width: 30vw;
     }
     .nav-middle .search-box input{
-        width: 100px;
+        width: 100%;
+    }
+    .user-icon{
+        margin-right: 3vw;
+    }
+}
+
+@media screen and (min-width:568px) and (max-width:768px) {
+    .nav-left .menu-icon{
+        display: none;
+    }
+    .nav-left span{
+        margin-left: -3px;
+    }
+    .nav-right .icons{
+        display: none;
+    }
+    .nav-middle .search-box{
+        margin-left: 100px;
+        width: 40vw;
+    }
+    .nav-middle .search-box input{
+        width: 100%;
+    }
+    .user-icon{
+        margin-right: 3vw;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:900px) {
+    .nav-left .menu-icon{
+        display: none;
+    }
+    .nav-left span{
+        margin-left: -3px;
+    }
+    .nav-right .icons{
+        display: none;
+    }
+    .nav-middle .search-box{
+        margin-left: 150px;
+        width: 40vw;
+    }
+    .nav-middle .search-box input{
+        width: 100%;
+    }
+    .user-icon{
+        margin-right: 3vw;
     }
 }

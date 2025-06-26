@@ -1,5 +1,4 @@
 .sidebar{
-    background: #fff;
     width: 15%;
     height: 100vh;
     position: fixed;
@@ -20,6 +19,9 @@
     flex-wrap: wrap;
     cursor: pointer;
 }
+.side-link p{
+    color: white;
+}
 .sidebar hr{
     border: 0;
     height: 1px;
@@ -33,8 +35,9 @@
 }
 .subscribe-list img{
     width: 25px;
+    height: 25px;
     border-radius: 50%;
-    margin-right: 20px;
+
 }
 .small-sidebar{
     width: 5%;
@@ -49,13 +52,19 @@
     width: 50%;
     margin-bottom: 20px;
 }
-.side-link.active img{
+.side-link{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.side-link.active .iconss{
     padding-bottom: 2px;
     border-bottom: 3px solid #df1414;
 }
 .side-link.active p{
     color: #df1414;
     padding-bottom: 2px;
+    margin-left: 5px;
 }
 
 @media (max-width:900px){

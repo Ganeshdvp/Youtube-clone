@@ -1,6 +1,12 @@
 .recommended{
     flex-basis: 30%;
 }
+.recommended img:hover{
+    transform: scale(1.05);
+}
+.recommended img{
+    border-radius: 10px;
+}
 .side-video-list{
     display: flex;
     justify-content: space-between;
@@ -16,9 +22,11 @@
 .vid-info h4{
     font-size: 13px;
     margin-bottom: 5px;
+    color: rgb(224, 222, 222);
 }
 .vid-info p{
     font-size: 12px;
+    color: #a2a2a2;
 }
 @media (max-width:900px){
     .recommended{

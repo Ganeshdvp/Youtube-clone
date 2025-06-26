@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import './Playvideo.css'
-import Like from '../../assets/thumbs-up.svg'
-import Dislike from '../../assets/thumbs-down.svg'
 import { API_KEY ,value_converter } from '../../data'
 import moment from 'moment'
-import { useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faThumbsUp, faThumbsDown, faFloppyDisk } from '@fortawesome/free-regular-svg-icons';
+import { faShare } from '@fortawesome/free-solid-svg-icons';
 
 const Playvideo = () => {
 
@@ -32,9 +33,12 @@ const Playvideo = () => {
   useEffect(()=>{
     fetchVideoData();
   },[videoId])
-  useEffect(()=>{
+
+  useEffect(() => {
+  if (apiData) {
     fetchOtherData();
-  },[apiData])
+  }
+}, [apiData]);
 
   return (
     <div className='play-video'>
@@ -43,11 +47,11 @@ const Playvideo = () => {
       <h3>{apiData?apiData.snippet.title:"title here"}</h3>
       <div className="play-video-info">
         <p>{apiData?value_converter(apiData.statistics.viewCount):'16k'} Views &bull; {apiData?moment(apiData.snippet.publishedAt).fromNow():''}</p>
-        <div>
-          <span><img src={Like} alt="" />{apiData?value_converter(apiData.statistics.likeCount):155}</span>
-          <span><img src={Dislike} alt="" /></span>
-          <span><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHmcLcocEM3JjiS1UF22BVtGZfeuI6wYZ0mQ&s" alt="" />Share</span>
-          <span><img src="https://cdn.iconscout.com/icon/free/png-256/free-save-1779882-1518534.png" alt="" />Save</span>  
+        <div className='play-video-info-like'>
+          <span><FontAwesomeIcon icon={faThumbsUp} style={{marginRight:'5px', fontSize:'1.1rem'}}/>{apiData?value_converter(apiData.statistics.likeCount):155}</span>
+          <span><FontAwesomeIcon icon={faThumbsDown} style={{marginRight:'5px', fontSize:'1.1rem'}}/></span>
+          <span><FontAwesomeIcon icon={faShare} style={{marginRight:'5px', fontSize:'1.1rem'}}/>Share</span>
+          <span><FontAwesomeIcon icon={faFloppyDisk} style={{marginRight:'5px', fontSize:'1.1rem'}}/> Save</span>  
         </div>
       </div>
       <hr />
@@ -72,9 +76,9 @@ const Playvideo = () => {
             <h3>{item.snippet.topLevelComment.snippet.authorDisplayName}<span>{moment(item.snippet.publishedAt).fromNow()}</span></h3>
             <p>{item.snippet.topLevelComment.snippet.textDisplay}</p>
             <div className="comment-action">
-              <img src={Like} alt="" />
+              <FontAwesomeIcon icon={faThumbsUp} style={{color:'#a5a5a5',marginRight:'5px'}}/>
               <span>{value_converter(item.snippet.topLevelComment.snippet.likeCount)}</span>
-              <img src={Dislike} alt="" />
+              <FontAwesomeIcon icon={faThumbsUp} style={{color:'#a5a5a5',marginRight:'5px'}}/>
               <span></span>
             </div>
           </div>

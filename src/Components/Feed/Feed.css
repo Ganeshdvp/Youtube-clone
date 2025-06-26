@@ -9,18 +9,61 @@
     width: 270px;
     border-radius: 5px;
 }
+.card img:hover{
+    transform: scale(1.05);
+}
 .card h2{
     font-size: 16px;
     font-weight: 600;
-    color: black;
+    color: rgb(229, 229, 229);
     margin: 5px 0;
 }
 .card h3{
     font-size: 14px;
     font-weight: 600;
-    color: #555;
+    color: #4e4e4e;
     margin: 6px 0;
 }
 .card p{
     font-size: 14px;
+}
+
+
+/* responsive */
+@media screen and (max-width:568px){
+    .feed{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .card h2{
+        width: 270px;
+    }
+}
+
+@media screen and (min-width:568px) and (max-width : 768px) {
+    .feed{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: start;
+        gap: 20px;
+    }
+    .card h2{
+        width: 270px;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width : 900px) {
+    .feed{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: start;
+        gap: 20px;
+    }
+    .card h2{
+        width: 270px;
+    }
 }
